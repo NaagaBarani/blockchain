@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Metamask Login</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="box-form">
+        <div class="left">
+            <div class="overlay">
+                <img src="https://i.seadn.io/gae/QtJ-cYQ0WmB2iDSA-_HQ9pEdgcIl0AmAMQ_LI3EB7awtncsc60lxJkz4D-s465XIqa6uKaLQhoLw79w3a_VEEFtE6w3CjYcQVhqvHA?auto=format&w=1000" style="width: 50%;height: 50%;"></img>
+                <h1>META MASK</h1>
+                
+                <span>
+                    
+                </span>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <h5>Login </h5>
+
+        
+            <br><br>
+
+            <button onclick="connectMetamask()">Connect to meta mask</button>
+
+
+        </div>
+        <!-- partial -->
+
+</body>
+
+<script>
+
+    let account;
+    const connectMetamask = async () => {
+        console.log("Connecting");
+        if (window.ethereum !== "undefined") {
+            const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+            console.log("Connecting", accounts);
+            if (accounts) {
+                location.replace("./home.html");
+            }
+            else {
+                alert(" login failed");
+            }
+
+        }
+    }
+
+
+    function myFunction() {
+
+
+
+
+
+    }
+</script>
+
+</html>
